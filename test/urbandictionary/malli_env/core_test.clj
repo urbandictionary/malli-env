@@ -23,7 +23,7 @@
 
 (deftest defaults-test (is (= [:valid {:asdf 555}] (env* [:map [:asdf {:default 555} :int]] {}))))
 
-(deftest defaults2-test (is (= [:valid {}] (env* [:map [:asdf {:optional true} :int]] {}))))
+(deftest optional-test (is (= [:valid {}] (env* [:map [:asdf {:optional true} :int]] {}))))
 
 (deftest range-test
   (is (re-find #"should be larger than 5" (second (env* [:map [:xxx [:and :int [:> 5]]]] {"XXX" 1})))))
