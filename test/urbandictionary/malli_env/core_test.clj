@@ -40,14 +40,14 @@
              (is (= :invalid result))
              (is (re-find #"asdf.+missing required key" message)))))
 
-(deftest env-test
-  (testing
-   "valid input"
-   (let [exit-code (atom nil)]
-     (is (= "" (with-out-str (env [:map [:param-1 :string]] {"PARAM_1" "value1"} #(reset! exit-code %)))))
-     (is (nil? @exit-code))))
-  (testing "invalid input"
-           (let [exit-code (atom nil)]
-             (is (re-find #":param1.+missing required key"
-                          (with-out-str (env [:map [:param1 :string]] {} #(reset! exit-code %)))))
-             (is (= 1 @exit-code)))))
+(deftest valid-env-test
+  (let [exit-code (atom nil)]
+    (is (= "" (with-out-str (env [:map [:param-1 :string]] {"PARAM_1" "value1"} #(reset! exit-code %)))))
+    (is (nil? @exit-code)))
+  )
+
+(deftest invalid-env-test
+  (let [exit-code (atom nil)]
+    (is (re-find #":param1.+missing required key"
+                 (with-out-str (env [:map [:param1 :string]] {} #(reset! exit-code %)))))
+    (is (= 1 @exit-code))))
