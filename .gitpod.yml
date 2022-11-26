@@ -1,0 +1,5 @@
+vscode:
+  extensions:
+    - betterthantomorrow.calva
+tasks:
+  - command: lein test
