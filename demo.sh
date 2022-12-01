@@ -3,7 +3,7 @@
 set -euxf -o pipefail
 
 export PARAM1=5
-[[ "$(lein run -m urbandictionary.malli-env.demo)" =~ "Success" ]]
+[[ "$(lein run -m malli-env.demo)" =~ "Success" ]]
 
 unset PARAM1
-[[ "$(lein run -m urbandictionary.malli-env.demo)" =~ "missing required key" ]]
+[[ "$(lein run -m malli-env.demo)" =~ "missing required key" ]]

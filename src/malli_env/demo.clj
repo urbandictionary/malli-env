@@ -1,7 +1,6 @@
-(ns urbandictionary.malli-env.demo
+(ns malli-env.demo
   (:gen-class)
-  (:require
-   [urbandictionary.malli-env.core :as cli]))
+  (:require [malli-env.core :as cli]))
 
 (defn -main
   []

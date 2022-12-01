@@ -4,5 +4,6 @@ vscode:
 tasks:
   - init: |
       sudo wget -O /usr/local/bin/lein https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
-      sudo chmod +x /usr/local/bin/lein
+      sudo wget -O /usr/local/bin/zprint https://github.com/kkinnear/zprint/releases/download/1.2.4/zprintl-1.2.4
+      sudo chmod +x /usr/local/bin/lein /usr/local/bin/zprint
     command: lein test
