@@ -7,3 +7,5 @@ export PARAM1=5
 
 unset PARAM1
 [[ "$(lein run -m malli-env.demo)" =~ "missing required key" ]]
+
+echo "Passed!"

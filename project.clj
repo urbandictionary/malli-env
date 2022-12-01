@@ -1,4 +1,4 @@
-(defproject com.urbandictionary/malli-env "0.1.1"
+(defproject com.urbandictionary/malli-env "0.1.2"
   :description "Get environment variables with malli validation and coercion"
   :url "https://github.com/urbandictionary/malli-env"
   :profiles {:dev {:dependencies [[metosin/malli "0.8.4"]]},
